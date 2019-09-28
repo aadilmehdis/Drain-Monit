@@ -70,7 +70,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Megathon2K19.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 

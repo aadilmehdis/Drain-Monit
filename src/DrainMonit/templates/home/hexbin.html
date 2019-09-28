@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+<!-- Create an element where the map will take place -->
+<svg id="my_dataviz" width="440" height="300"></svg>
+<script>
+
+    // The svg
+    var svg = d3.select("svg"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height");
+    
+    // Map and projection
+    var projection = d3.geoMercator()
+        .scale(350) // This is the zoom
+        .translate([850, 440]); // You have to play with these values to center your map
+    
+    // Path generator
+    var path = d3.geoPath()
+        .projection(projection)
+    
+    // Load external data and boot
+    d3.json("file:///Users/aadilmehdi/Hackathons/2019/Megathon/Megathon2K19/src/DrainMonit/templates/home/data.json", function(data){
+    
+      // Draw the map
+      svg.append("g")
+          .selectAll("path")
+          .data(data.features)
+          .enter()
+          .append("path")
+              .attr("fill", "#69a2a2")
+              .attr("d", path)
+              .attr("stroke", "white")
+    
+      // Add the labels
+      svg.append("g")
+          .selectAll("labels")
+          .data(data.features)
+          .enter()
+          .append("text")
+            .attr("x", function(d){return path.centroid(d)[0]})
+            .attr("y", function(d){return path.centroid(d)[1]})
+            .text(function(d){ return d.properties.iso3166_2})
+            .attr("text-anchor", "middle")
+            .attr("alignment-baseline", "central")
+            .style("font-size", 11)
+            .style("fill", "white")
+    })
+    
+    </script>
