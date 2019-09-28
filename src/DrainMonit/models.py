@@ -22,4 +22,8 @@ class Pipe(models.Model):
 
 class Sensor(models.Model):
     pipe                    = models.ForeignKey(Pipe, on_delete=models.CASCADE)
-    history                 = models.FloatField("Reading History", null=True)
+
+class Readings(models.Model):
+    sensor                  = models.ForeignKey(Sensor, on_delete=models.CASCADE)
+    date                    = models.DateField("Date", null=True)
+    rate                    = models.FloatField("Rate", null=True)
