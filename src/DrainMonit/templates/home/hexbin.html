@@ -14,19 +14,19 @@
     var svg = d3.select("svg"),
         width = +svg.attr("width"),
         height = +svg.attr("height");
-    
+
     // Map and projection
     var projection = d3.geoMercator()
         .scale(350) // This is the zoom
         .translate([850, 440]); // You have to play with these values to center your map
-    
+
     // Path generator
     var path = d3.geoPath()
         .projection(projection)
-    
+
     // Load external data and boot
-    d3.json("file:///Users/aadilmehdi/Hackathons/2019/Megathon/Megathon2K19/src/DrainMonit/templates/home/data.json", function(data){
-    
+    d3.json("https://raw.githubusercontent.com/aadilmehdis/Megathon2K19/master/src/DrainMonit/templates/home/data.json?token=AB5UT7DF3YPU7LVAHDMWW3S5TECPA", function(data){
+
       // Draw the map
       svg.append("g")
           .selectAll("path")
@@ -36,7 +36,7 @@
               .attr("fill", "#69a2a2")
               .attr("d", path)
               .attr("stroke", "white")
-    
+
       // Add the labels
       svg.append("g")
           .selectAll("labels")
@@ -51,5 +51,5 @@
             .style("font-size", 11)
             .style("fill", "white")
     })
-    
+
     </script>
