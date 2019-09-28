@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Megathon 2k19</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link href={% static "css/bootstrap.min.css" %} rel="stylesheet">
+  <link href={% static "css/mdb.min.css" %} rel="stylesheet">
+  <style>
+  .bg {
+    background-image: url("{% static "img/jumbotron-background.png" %}");
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+  </style>
+</head>
+
+<!--Main Navigation-->
+<header>
+
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand waves-effect" href="#">
+        <strong class="blue-text">Smart Drain</strong>
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link waves-effect" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Right -->
+         <ul class="navbar-nav nav-flex-icons">
+           <li class="nav-item">
+             <a href="https://github.com/aadilmehdis/GreenTicks" class="nav-link border border-light rounded waves-effect"
+               target="_blank">
+               <i class="fab fa-github mr-2"></i>Our GitHub Repo
+             </a>
+           </li>
+         </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main class="mt-5 pt-5">
+  <div class="container">
+
+    <!--Section: Jumbotron-->
+    <section class="card bg wow fadeIn" id="intro">
+
+      <!-- Content -->
+      <div class="card-body text-white text-center py-5 px-5 my-5">
+
+        <h1 class="mb-4">
+          <h1 class="display-3"><i class="fas fa-search-dollar"></i> True Funder</h1>
+        </h1>
+        <p>
+          <h4 class="display-5">Fund parties, view transaction histories and much more...</h4>
+        </p>
+        <p class="mb-4">
+          <h4 class="display-5">Developed for CodeFunDo 2019</h4>
+        </p>
+        <p class="mb-4">
+          <h4 class="display-5">Team name: Greenticks</h4>
+        </p>
+      </div>
+      <!-- Content -->
+    </section>
+    <!--Section: Jumbotron-->
+
+    <hr class="my-5">
+
+    <!--Section: Cards-->
+    <section class="text-center">
+    {% for p in all_parties %}
+
+      {% if p.pk|divisibleby:'2' is not True %}
+        <!--Grid row-->
+        <div class="row mb-4 wow fadeIn">
+      {% endif %}
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Card-->
+          <div class="card">
+
+            <!--Card image-->
+            <div class="view overlay">
+              <img src="../static/img/party/{{ p.symbol }}" class="card-img-top"
+                alt="{{p.name}}">
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+              <!--Title-->
+              <h4 class="card-title">{{ p.name }}</h4>
+              <a href="profile/{{ p.pk }}"
+                class="btn btn-primary btn-md">View party
+                <i class="fas fa-play ml-2"></i>
+              </a>
+            </div>
+
+          </div>
+          <!--/.Card-->
+
+        </div>
+        <!--Grid column-->
+
+        {% if p.pk|divisibleby:'2' is True %}
+          </div>
+          <!--Grid row-->
+        {% endif %}
+
+    {% endfor %}
+
+    </section>
+    <!--Section: Cards-->
+
+  </div>
+</main>
+<!--Main layout-->
+
+<!--Footer-->
+<footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+
+  <!--Copyright-->
+  <div class="footer-copyright py-3">
+    Made with <3 from IIIT Hyderabad
+  </div>
+  <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src={% static "js/jquery-3.4.1.min.js" %}></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src={% static "js/popper.min.js" %}></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src={% static "js/bootstrap.min.js" %}></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src={% static "js/mdb.min.js" %}></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
+</body>
+
+</html>
