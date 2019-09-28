@@ -9,9 +9,11 @@ def index(request):
 
     return render(request, 'home/index.html', context)
 
-def monitor(request):
+def details(request):
 
-    return render(request, 'home/monitor.html', context)
+    context = {}
+    
+    return render(request, 'home/details.html', context)
 
 def predict(request):
 
