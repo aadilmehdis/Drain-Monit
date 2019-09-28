@@ -84,6 +84,7 @@
 <!--/.Footer-->
 
   <!-- SCRIPTS -->
+
   <!-- JQuery -->
   <script type="text/javascript" src={% static "js/jquery-3.4.1.min.js" %}></script>
   <!-- Bootstrap tooltips -->
@@ -97,6 +98,8 @@
     // Animations initialization
     new WOW().init();
   </script>
+
+  {% block script %}{% endblock %}
 </body>
 
 </html>
