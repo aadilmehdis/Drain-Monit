@@ -46,7 +46,9 @@
         "area": "#A187D7",
         "bees": 47.8,
         "iso3166_2": "1",
+        "type" : "land",
         "google_name": "Rhode Island (United States)"
+
       }
     },
     {
@@ -94,6 +96,7 @@
         "area": "#A187D7",
         "bees": 33.9,
         "iso3166_2": "32",
+        "type" : "land",
         "google_name": "Vermont (United States)"
       }
     },
@@ -142,6 +145,7 @@
         "area": "#D787D7",
         "bees": 63.4,
         "iso3166_2": "3",
+        "type" : "land",
         "google_name": "Oklahoma (United States)"
       }
     },
@@ -190,6 +194,7 @@
         "area": "#87D7CF",
         "bees": 41.5,
         "iso3166_2": "4",
+        "type" : "land",
         "google_name": "North Carolina (United States)"
       }
     },
@@ -238,6 +243,7 @@
         "area": "#D79587",
         "bees": 45.6,
         "iso3166_2": "5",
+        "type" : "land",
         "google_name": "Virginia (United States)"
       }
     },
@@ -286,6 +292,7 @@
         "area": "#D79587",
         "bees": 59.5,
         "iso3166_2": "6",
+        "type" : "land",
         "google_name": "West Virginia (United States)"
       }
     },
@@ -334,6 +341,7 @@
         "area": "#93c572",
         "bees": 40.1,
         "iso3166_2": "7",
+        "type" : "land",
         "google_name": "California (United States)"
       }
     },
@@ -382,6 +390,7 @@
         "area": "#D787D7",
         "bees": 40.8,
         "iso3166_2": "8",
+        "type" : "land",
         "google_name": "Kansas (United States)"
       }
     },
@@ -430,6 +439,7 @@
         "area": "#D79587",
         "bees": 47.7,
         "iso3166_2": "9",
+        "type" : "land",
         "google_name": "Kentucky (United States)"
       }
     },
@@ -478,6 +488,7 @@
         "area": "#D79587",
         "bees": 60.9,
         "iso3166_2": "10",
+        "type" : "land",
         "google_name": "Maryland (United States)"
       }
     },
@@ -526,6 +537,7 @@
         "area": "#D787D7",
         "bees": 34.9,
         "iso3166_2": "11",
+        "type" : "land",
         "google_name": "Missouri (United States)"
       }
     },
@@ -574,6 +586,8 @@
         "area": "#D787D7",
         "bees": 37.3,
         "iso3166_2": "12",
+        "type" : "sensor",
+        "status" : "normal",
         "google_name": "Nebraska (United States)"
       }
     },
@@ -622,6 +636,7 @@
         "area": "#D787D7",
         "bees": 46.1,
         "iso3166_2": "13",
+        "type" : "land",
         "google_name": "New Mexico (United States)"
       }
     },
@@ -670,6 +685,7 @@
         "area": "#87D7CF",
         "bees": 26.6,
         "iso3166_2": "14",
+        "type" : "land",
         "google_name": "South Carolina (United States)"
       }
     },
@@ -718,6 +734,8 @@
         "area": "#D79587",
         "bees": 36.4,
         "iso3166_2": "15",
+        "type" : "sensor",
+        "status" : "normal",
         "google_name": "Tennessee (United States)"
       }
     },
@@ -766,6 +784,7 @@
         "area": "#D787D7",
         "bees": 61.4,
         "iso3166_2": "16",
+        "type" : "land",
         "google_name": "Iowa (United States)"
       }
     },
@@ -814,6 +833,7 @@
         "area": "#93c572",
         "bees": 26.7,
         "iso3166_2": "17",
+        "type" : "land",
         "google_name": "Nevada (United States)"
       }
     },
@@ -862,6 +882,7 @@
         "area": "#A187D7",
         "bees": 47.6,
         "iso3166_2": "18",
+        "type" : "land",
         "google_name": "New Jersey (United States)"
       }
     },
@@ -910,6 +931,7 @@
         "area": "#D787D7",
         "bees": 36.1,
         "iso3166_2": "19",
+        "type" : "land",
         "google_name": "South Dakota (United States)"
       }
     },
@@ -958,6 +980,8 @@
         "area": "#D79587",
         "bees": 49.8,
         "iso3166_2": "20",
+        "type" : "sensor",
+        "status" : "normal",
         "google_name": "Ohio (United States)"
       }
     },
@@ -1006,6 +1030,7 @@
         "area": "#93c572",
         "bees": 32.5,
         "iso3166_2": "21",
+        "type" : "land",
         "google_name": "Wyoming (United States)"
       }
     },
@@ -1054,6 +1079,7 @@
         "area": "#87D7CF",
         "bees": null,
         "iso3166_2": "22",
+        "type" : "land",
         "google_name": "District of Columbia (United States)"
       }
     },
@@ -1102,6 +1128,7 @@
         "area": "#87D7CF",
         "bees": 61,
         "iso3166_2": "23",
+        "type" : "land",
         "google_name": "Delaware (United States)"
       }
     },
@@ -1150,6 +1177,7 @@
         "area": "#87D7CF",
         "bees": 54.8,
         "iso3166_2": "24",
+        "type" : "land",
         "google_name": "Florida (United States)"
       }
     },
@@ -1198,6 +1226,7 @@
         "area": "#A187D7",
         "bees": 39.4,
         "iso3166_2": "25",
+        "type" : "land",
         "google_name": "New Hampshire (United States)"
       }
     },
@@ -1246,6 +1275,7 @@
         "area": "#D787D7",
         "bees": 46.3,
         "iso3166_2": "27",
+        "type" : "land",
         "google_name": "Texas (United States)"
       }
     },
@@ -1294,6 +1324,7 @@
         "area": "#87D7CF",
         "bees": 48.1,
         "iso3166_2": "28",
+        "type" : "land",
         "google_name": "Alabama (United States)"
       }
     },
@@ -1342,6 +1373,8 @@
         "area": "#D787D7",
         "bees": 42.9,
         "iso3166_2": "29",
+        "type" : "sensor",
+        "status" : "normal",
         "google_name": "Arizona (United States)"
       }
     },
@@ -1390,6 +1423,8 @@
         "area": "#87D7CF",
         "bees": 34.9,
         "iso3166_2": "30",
+        "type" : "sensor",
+        "status" : "normal",
         "google_name": "Georgia (United States)"
       }
     },
@@ -1438,6 +1473,7 @@
         "area": "#D79587",
         "bees": 44.3,
         "iso3166_2": "31",
+        "type" : "land",
         "google_name": "Louisiana (United States)"
       }
     },
@@ -1486,6 +1522,7 @@
         "area": "#D79587",
         "bees": 38.7,
         "iso3166_2": "32",
+        "type" : "land",
         "google_name": "Mississippi (United States)"
       }
     },
@@ -1534,6 +1571,7 @@
         "area": "#D787D7",
         "bees": 33.5,
         "iso3166_2": "33",
+        "type" : "land",
         "google_name": "Utah (United States)"
       }
     },
@@ -1582,6 +1620,7 @@
         "area": "#D787D7",
         "bees": 38,
         "iso3166_2": "34",
+        "type" : "land",
         "google_name": "Colorado (United States)"
       }
     },
@@ -1630,6 +1669,7 @@
         "area": "#D79587",
         "bees": 48.3,
         "iso3166_2": "35",
+        "type" : "land",
         "google_name": "Arkansas (United States)"
       }
     },
@@ -1678,6 +1718,7 @@
         "area": "#93c572",
         "bees": 33.3,
         "iso3166_2": "36",
+        "type" : "land",
         "google_name": "Idaho (United States)"
       }
     },
@@ -1726,6 +1767,8 @@
         "area": "#93c572",
         "bees": 25.2,
         "iso3166_2": "37",
+        "type" : "sensor",
+        "status" : "normal",
         "google_name": "Oregon (United States)"
       }
     },
@@ -1774,6 +1817,7 @@
         "area": "#93c572",
         "bees": 62.4,
         "iso3166_2": "38",
+        "type" : "land",
         "google_name": "Illinois (United States)"
       }
     },
@@ -1822,6 +1866,7 @@
         "area": "#D79587",
         "bees": 60.6,
         "iso3166_2": "39",
+        "type" : "land",
         "google_name": "Pennsylvania (United States)"
       }
     },
@@ -1870,6 +1915,7 @@
         "area": "#D79587",
         "bees": 49.1,
         "iso3166_2": "40",
+        "type" : "land",
         "google_name": "Indiana (United States)"
       }
     },
@@ -1918,6 +1964,7 @@
         "area": "#A187D7",
         "bees": 54.1,
         "iso3166_2": "41",
+        "type" : "land",
         "google_name": "New York (United States)"
       }
     },
@@ -1966,6 +2013,7 @@
         "area": "#93c572",
         "bees": 39.3,
         "iso3166_2": "42",
+        "type" : "land",
         "google_name": "Washington (United States)"
       }
     },
@@ -2014,6 +2062,7 @@
         "area": "#93c572",
         "bees": 60.2,
         "iso3166_2": "43",
+        "type" : "land",
         "google_name": "Wisconsin (United States)"
       }
     },
@@ -2062,6 +2111,8 @@
         "area": "#A187D7",
         "bees": 46.4,
         "iso3166_2": "44",
+        "type" : "sensor",
+        "status" : "normal",
         "google_name": "Massachusetts (United States)"
       }
     },
@@ -2110,6 +2161,7 @@
         "area": "#D79587",
         "bees": 27.7,
         "iso3166_2": "45",
+        "type" : "land",
         "google_name": "Michigan (United States)"
       }
     },
@@ -2158,6 +2210,7 @@
         "area": "#93c572",
         "bees": 51.2,
         "iso3166_2": "46",
+        "type" : "land",
         "google_name": "Minnesota (United States)"
       }
     },
@@ -2206,6 +2259,7 @@
         "area": "#93c572",
         "bees": 41.1,
         "iso3166_2": "47",
+        "type" : "land",
         "google_name": "Montana (United States)"
       }
     },
@@ -2254,6 +2308,8 @@
         "area": "#93c572",
         "bees": 40.4,
         "iso3166_2": "48",
+        "type" : "sensor",
+        "status" : "normal",
         "google_name": "North Dakota (United States)"
       }
     },
@@ -2302,6 +2358,7 @@
         "area": "#A187D7",
         "bees": 57.5,
         "iso3166_2": "50",
+        "type" : "land",
         "google_name": "Connecticut (United States)"
       }
     }
