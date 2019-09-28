@@ -1,0 +1,42 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+
+<!--Section: Cards-->
+<section class="text-center">
+
+    <!--Grid row-->
+    <div class="row wow fadeIn">
+      <!--Grid column-->
+      <div class="col-md-4 offset-md-4">
+
+      <div class="card">
+
+        <!--Grid column-->
+        <div class="col-md-12 mb-4">
+
+          <form class="text-center border-light p-5" action="" id="predict" onsubmit="">
+
+            <p class="h4 mb-4">Predict Flow</p>
+
+            <!-- Rainfall value -->
+            <input type="value" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Rainfall (in mm)">
+
+            <button class="btn btn-info btn-block my-4" type="submit" >Predict flow rate</button>
+
+          </form>
+
+        </div>
+
+      </div>
+      <!--Grid column-->
+      </div>
+
+    </div>
+    <!--Grid row-->
+
+
+</section>
+<!--Section: Cards-->
+
+{% endblock %}
