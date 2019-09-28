@@ -25,7 +25,7 @@
         .projection(projection)
 
     // Load external data and boot
-    d3.json("https://raw.githubusercontent.com/aadilmehdis/Megathon2K19/master/src/DrainMonit/templates/home/data.json?token=AB5UT7DF3YPU7LVAHDMWW3S5TECPA", function(data){
+    d3.json("http://localhost:7000/data.json", function(data){
 
       // Draw the map
       svg.append("g")
