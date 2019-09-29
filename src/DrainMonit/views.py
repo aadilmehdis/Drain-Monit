@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Sensor, Pipe, Readings
+# from .forms import PredictForm
 import requests
 
 
@@ -60,7 +61,16 @@ def sensor_data(request):
 
 def predict(request):
 
-    context = {}
+    if request.method == 'POST':
+        form = NameForm(request.POST)
+
+        if form.is_valid():
+            return HttpResponseRedirect('/thanks/')
+
+    else:
+        form = PredictForm()
+
+    context = {'form': form}
 
     return render(request, 'home/predict.html', context)
 
