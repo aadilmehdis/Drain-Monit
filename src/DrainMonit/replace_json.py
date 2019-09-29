@@ -1,8 +1,8 @@
-import json 
+import json
 import os.path
 
-thresh_max = 1400
-thresh_min = 1100
+thresh_max = 15000
+thresh_min = 9000
 
 # with open('./data.json', 'r') as file:
 #      json_data = json.load(file)
@@ -12,7 +12,7 @@ thresh_min = 1100
 #             print(item['properties']['iso3166_2'])
 
 def update_val(sensor_id, value):
-    # print(value)
+    print(value, thresh_max)
     BASE = os.path.dirname(os.path.abspath(__file__))
     file_name = os.path.join(BASE, "data.json")
     if value > thresh_max:
@@ -22,7 +22,7 @@ def update_val(sensor_id, value):
                 print(value)
                 item['properties']['rate'] = value
                 if item['properties']['iso3166_2'] == sensor_id:
-                    print(item['properties']['iso3166_2'])
+                    # print(item['properties']['iso3166_2'])
                     item['properties']['status'] = "critical"
     elif value > thresh_min:
         with open(file_name, 'r') as file:
@@ -41,9 +41,9 @@ def update_val(sensor_id, value):
                 if item['properties']['iso3166_2'] == sensor_id:
                     item['properties']['status'] = "clogged"
 
-        with open(file_name, "w") as jsonFile:
-            json.dump(json_data, jsonFile, indent=2)            
+    with open(file_name, "w") as jsonFile:
+        json.dump(json_data, jsonFile, indent=2)
 
 if __name__ == "__main__":
 
-    update_val('12', 16)            
+    update_val('12', 16)

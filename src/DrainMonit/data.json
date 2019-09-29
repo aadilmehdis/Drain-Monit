@@ -749,7 +749,7 @@
         "iso3166_2": "15",
         "rate": 1077.6885906316866,
         "type": "sensor",
-        "status": "clogged",
+        "status": "normal",
         "google_name": "Tennessee (United States)"
       }
     },
@@ -1000,7 +1000,7 @@
         "iso3166_2": "20",
         "rate": 1077.6885906316866,
         "type": "sensor",
-        "status": "critical",
+        "status": "clogged",
         "google_name": "Ohio (United States)"
       }
     },
@@ -1803,7 +1803,7 @@
         "iso3166_2": "37",
         "rate": 1077.6885906316866,
         "type": "sensor",
-        "status": "clogged",
+        "status": "critical",
         "google_name": "Oregon (United States)"
       }
     },
@@ -2154,7 +2154,7 @@
         "iso3166_2": "44",
         "rate": 1077.6885906316866,
         "type": "sensor",
-        "status": "critical",
+        "status": "clogged",
         "google_name": "Massachusetts (United States)"
       }
     },
@@ -2355,7 +2355,7 @@
         "iso3166_2": "48",
         "rate": 1077.6885906316866,
         "type": "sensor",
-        "status": "critical",
+        "status": "clogged",
         "google_name": "North Dakota (United States)"
       }
     },

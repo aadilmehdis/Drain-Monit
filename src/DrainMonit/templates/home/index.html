@@ -42,9 +42,27 @@
     <!--Section: Cards-->
     <section class="text-center">
 
-        <!--Grid row-->
-        <div class="row mb-4 wow fadeIn">
+      <!--Grid row-->
+      <div class="row mb-4 wow fadeIn">
 
+        <!--Grid column-->
+        <div class="col-md-12 mb-4">
+            <h3> IoT Sensor Visualization </h3>
+            <h5> Red : Critical flow rate </h5>
+            <h5> Green : Safe flow rate </h5>
+            <h5> Yellow : Low flow rate </h3>
+
+            <!-- Create an element where the map will take place -->
+            <svg id="my_dataviz" width="880" height="600"></svg>
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <!--Grid row-->
+      <div class="row mb-4 wow fadeIn">
 
         <!--Grid column-->
         <div class="col-md-6 mb-4">
@@ -74,5 +92,85 @@
 
     </section>
     <!--Section: Cards-->
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+
+    setInterval(function() {
+        window.location.reload();
+        const Http = new XMLHttpRequest();
+        const url="http://127.0.0.1:8000/predict_back";
+        Http.open("GET", url);
+        Http.send();
+
+        Http.onreadystatechange = (e) => {
+        console.log(Http.responseText)
+        console.log("lel")
+        }
+    }, 5000)
+
+
+    // The svg
+    var svg = d3.select("svg"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height");
+    // Map and projection
+    var projection = d3.geoMercator()
+        .scale(550) // This is the zoom
+        .translate([1450, 650]); // You have to play with these values to center your map
+    // Path generator
+    var path = d3.geoPath()
+        .projection(projection)
+    // Load external data and boot
+    d3.json("http://localhost:7000/data.json", function(data){
+        console.log(data)
+
+      // Draw the map
+      svg.append("g")
+          .selectAll("path")
+          .data(data.features)
+          .enter()
+          .append("path")
+              .attr("fill", function(d){
+                  if (d.properties.area == "land")
+                  {
+                      return d.properties.area;
+                  }
+                  else
+                  {
+                      if(d.properties.status == "normal")
+                      {
+                          return "green";
+                      }
+                      else if(d.properties.status == "critical")
+                      {
+                          return "crimson";
+                      }
+                      else if(d.properties.status == "clogged")
+                      {
+                          return "yellow";
+                      }
+                  }
+
+                  return d.properties.area})
+              .attr("d", path)
+      // Add the labels
+      svg.append("g")
+          .selectAll("labels")
+          .data(data.features)
+          .enter()
+          .append("text")
+            .attr("x", function(d){return path.centroid(d)[0]})
+            .attr("y", function(d){return path.centroid(d)[1]})
+            .text(function(d){ return d.properties.iso3166_2})
+            .attr("text-anchor", "middle")
+            .attr("alignment-baseline", "central")
+            .style("font-size", 11)
+            .style("fill", "white")
+    })
+    </script>
 
 {% endblock %}

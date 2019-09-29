@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Sensor, Pipe, Readings
+# from .forms import PredictForm
 import requests
 from .ML.Model import *
 import numpy as np
@@ -63,7 +64,16 @@ def sensor_data(request):
 
 def predict(request):
 
-    context = {}
+    if request.method == 'POST':
+        form = NameForm(request.POST)
+
+        if form.is_valid():
+            return HttpResponseRedirect('/thanks/')
+
+    else:
+        form = PredictForm()
+
+    context = {'form': form}
 
     return render(request, 'home/predict.html', context)
 
@@ -71,7 +81,7 @@ def predict_back(request):
     pipe_list = Pipe.objects.all()
     for pipe in pipe_list:
         X = np.array(
-            [float(pipe.elevation), (float(pipe.diameter)/1000)**2, float(pipe.angle), np.sqrt(np.random.uniform(low=0,high=1000)), 1]
+            [float(pipe.elevation), float(pipe.diameter)**2, float(pipe.angle), np.sqrt(np.random.uniform(low=0,high=180)), 1]
         )
         sensor_list = Sensor.objects.filter(pipe=pipe)
         for sensor in sensor_list:

@@ -10,7 +10,8 @@ def prediction(X):
     Y output 1 x N matrix
         Y = water flow rate
     '''
-    W = np.array([ 1.50697917, -0.98934085,  4.96066003,  9.62241236,  8.97676327])
+    p = np.random.randint(12,high=14)*1000
+    W = np.array([ 2.5, -25,  12.5,  250, p    ])
     Y = W @ X
     return Y
 
@@ -32,11 +33,11 @@ def regression(Y, X, learning_rate):
         w = w - (learning_rate*(Y - w @ Xin) @ (-Xin).T / X.shape[1])
         print(Loss)
 
-    return w    
+    return w
 
 
 if __name__ == "__main__":
-    
+
     Data = np.genfromtxt('training_data_pipe.csv', delimiter = ',')
     print(Data.shape)
     rate = 0.000002
