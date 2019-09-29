@@ -586,7 +586,7 @@
         "bees": 37.3,
         "iso3166_2": "12",
         "type": "sensor",
-        "status": "critical",
+        "status": "clogged",
         "google_name": "Nebraska (United States)"
       }
     },
@@ -734,7 +734,7 @@
         "bees": 36.4,
         "iso3166_2": "15",
         "type": "sensor",
-        "status": "normal",
+        "status": "clogged",
         "google_name": "Tennessee (United States)"
       }
     },
@@ -980,7 +980,7 @@
         "bees": 49.8,
         "iso3166_2": "20",
         "type": "sensor",
-        "status": "normal",
+        "status": "critical",
         "google_name": "Ohio (United States)"
       }
     },
@@ -1423,7 +1423,7 @@
         "bees": 34.9,
         "iso3166_2": "30",
         "type": "sensor",
-        "status": "normal",
+        "status": "critical",
         "google_name": "Georgia (United States)"
       }
     },
@@ -1767,7 +1767,7 @@
         "bees": 25.2,
         "iso3166_2": "37",
         "type": "sensor",
-        "status": "normal",
+        "status": "clogged",
         "google_name": "Oregon (United States)"
       }
     },
@@ -2111,7 +2111,7 @@
         "bees": 46.4,
         "iso3166_2": "44",
         "type": "sensor",
-        "status": "normal",
+        "status": "critical",
         "google_name": "Massachusetts (United States)"
       }
     },
@@ -2308,7 +2308,7 @@
         "bees": 40.4,
         "iso3166_2": "48",
         "type": "sensor",
-        "status": "normal",
+        "status": "critical",
         "google_name": "North Dakota (United States)"
       }
     },

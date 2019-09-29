@@ -1,7 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def prediction(W, X):
+
+def prediction(X):
 
     '''
     X input array 4 x N matrix
@@ -9,7 +10,7 @@ def prediction(W, X):
     Y output 1 x N matrix
         Y = water flow rate
     '''
-
+    W = np.array([ 1.50697917, -0.98934085,  4.96066003,  9.62241236,  8.97676327])
     Y = W @ X
     return Y
 
@@ -39,8 +40,8 @@ if __name__ == "__main__":
     Data = np.genfromtxt('training_data_pipe.csv', delimiter = ',')
     print(Data.shape)
     rate = 0.000002
-    w = regression(Data[:80000,0].T, Data[:80000,1:5].T,rate)
-    # w = np.array([ 1.50697917, -0.98934085,  4.96066003,  9.62241236,  8.97676327])
+    # w = regression(Data[:80000,0].T, Data[:80000,1:5].T,rate)
+    w = np.array([ 1.50697917, -0.98934085,  4.96066003,  9.62241236,  8.97676327])
     print(w)
     # datin = np.hstack((Data[80000,1:5],np.ones(())))
     print(np.mean((Data[80000:,0].T -  w @ np.hstack((Data[80000:,1:5],np.ones((Data[80000:,1:5].shape[0],1)))).T)**2))
