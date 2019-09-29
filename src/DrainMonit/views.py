@@ -25,11 +25,22 @@ def sensor(request, pk=None):
 
     sensor = Pipe.objects.get(pk=pk)
     id = Sensor.objects.get(pk=pk)
-    history = Readings.objects.get(sensor=id)
-    print(history)
+    history = Readings.objects.filter(sensor=id)
+
+    if len(history) > 10 :
+        history = history[:10]
+
+    rate = []
+    date = []
+
+    for tuple in history :
+        rate.append( tuple.rate )
+        date.append( tuple.date.strftime("%Y-%m-%d") )
+
     context = {
     's' : sensor,
-    'history' : history
+    'date' : date,
+    'rate' : rate,
     }
 
     return render(request, 'home/sensor.html', context)
