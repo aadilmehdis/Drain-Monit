@@ -19,6 +19,8 @@ def update_val(sensor_id, value):
         with open(file_name, 'r') as file:
             json_data = json.load(file)
             for item in json_data["features"]:
+                print(value)
+                item['properties']['rate'] = value
                 if item['properties']['iso3166_2'] == sensor_id:
                     print(item['properties']['iso3166_2'])
                     item['properties']['status'] = "critical"
@@ -26,12 +28,16 @@ def update_val(sensor_id, value):
         with open(file_name, 'r') as file:
             json_data = json.load(file)
             for item in json_data["features"]:
+                print(value)
+                item['properties']['rate'] = value
                 if item['properties']['iso3166_2'] == sensor_id:
                     item['properties']['status'] = "normal"
     else:
         with open(file_name, 'r') as file:
             json_data = json.load(file)
             for item in json_data["features"]:
+                print(value)
+                item['properties']['rate'] = value
                 if item['properties']['iso3166_2'] == sensor_id:
                     item['properties']['status'] = "clogged"
 

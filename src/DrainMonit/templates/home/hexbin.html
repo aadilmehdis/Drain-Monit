@@ -7,6 +7,7 @@
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
 <!-- Create an element where the map will take place -->
+<div id="lell"></div>
 <svg id="my_dataviz" width="880" height="600"></svg>
 <script>
 
@@ -38,6 +39,14 @@
     // Load external data and boot
     d3.json("http://localhost:7000/data.json", function(data){
         console.log(data)
+    document.getElementById('lell').innerHTML = `
+                Sensor:
+                </br>
+                Flow Rate:
+                </br>
+                Status:
+                </br> 
+                `
 
       // Draw the map
       svg.append("g")
@@ -46,9 +55,24 @@
           .enter()
           .append("path")
               .attr("fill", function(d){
-                  if (d.properties.area == "land")
+                  if (d.properties.type == "land")
                   {
-                      return d.properties.area;
+                    if(d.properties.area == "A"){
+                        console.log("SMD")
+                        return "#D787D7";
+                    }
+                    else if(d.properties.area == "B"){
+                        return "#A187D7";
+                    }
+                    else if(d.properties.area == "C"){
+                        return "#93c572";
+                    }
+                    else if(d.properties.area == "D"){
+                        return "#D79587";
+                    }
+                    else if(d.properties.area == "E"){
+                        return "#87D7CF";
+                    }
                   }
                   else
                   {
@@ -68,6 +92,29 @@
 
                   return d.properties.area})
               .attr("d", path)
+              .on('mouseover', function(d) {
+                  if(d.properties.type == "sensor"){
+                    document.getElementById('lell').innerHTML = `
+                    Sensor: #${d.properties.iso3166_2}
+                    </br>
+                    Flow Rate: ${d.properties.rate} gallons/minute
+                    </br>
+                    Status: ${d.properties.status}
+                    </br> 
+                    `
+                  }
+              })
+              .on('mouseout', function() {
+                document.getElementById('lell').innerHTML = `
+                Sensor:
+                </br>
+                Flow Rate:
+                </br>
+                Status:
+                </br> 
+                `
+              })
+
       // Add the labels
       svg.append("g")
           .selectAll("labels")
@@ -76,7 +123,9 @@
           .append("text")
             .attr("x", function(d){return path.centroid(d)[0]})
             .attr("y", function(d){return path.centroid(d)[1]})
-            .text(function(d){ return d.properties.iso3166_2})
+            .text(function(d){ 
+                return d.properties.area
+            })
             .attr("text-anchor", "middle")
             .attr("alignment-baseline", "central")
             .style("font-size", 11)
