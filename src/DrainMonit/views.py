@@ -39,4 +39,5 @@ def predict(request):
     return render(request, 'home/predict.html', context)
 
 def predict_back(request):
-    pass
+    print(request)
+    return HttpResponse("Yello")
