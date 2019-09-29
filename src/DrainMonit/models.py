@@ -35,6 +35,7 @@ class Readings(models.Model):
     sensor                  = models.ForeignKey(Sensor, on_delete=models.CASCADE)
     date                    = models.DateField("Date", null=True)
     rate                    = models.FloatField("Rate", null=True)
+    velocity                = models.FloatField("Velocity", null=True)
 
     def __str__(self):
         return "Readings: {} {}".format(self.pk, self.sensor)
