@@ -6,6 +6,7 @@ class Pipe(models.Model):
         ('B','b'),
         ('C','c'),
         ('D','d'),
+        ('E','e'),
     )
     MATERIAL = (
         ('high-density polyethylene', 'HDPE'),

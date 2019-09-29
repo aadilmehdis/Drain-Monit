@@ -53,3 +53,7 @@ def predict(request):
     context = {}
 
     return render(request, 'home/predict.html', context)
+
+def predict_back(request):
+    print(request)
+    return HttpResponse("Yello")

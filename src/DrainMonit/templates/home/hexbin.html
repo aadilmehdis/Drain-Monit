@@ -7,16 +7,19 @@
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
 <!-- Create an element where the map will take place -->
-<svg id="my_dataviz" width="440" height="300"></svg>
+<svg id="my_dataviz" width="880" height="600"></svg>
 <script>
+    setInterval(function() {
+        window.location.reload();
+    }, 3000)
     // The svg
     var svg = d3.select("svg"),
         width = +svg.attr("width"),
         height = +svg.attr("height");
     // Map and projection
     var projection = d3.geoMercator()
-        .scale(350) // This is the zoom
-        .translate([850, 440]); // You have to play with these values to center your map
+        .scale(550) // This is the zoom
+        .translate([1450, 650]); // You have to play with these values to center your map
     // Path generator
     var path = d3.geoPath()
         .projection(projection)
@@ -29,11 +32,8 @@
           .data(data.features)
           .enter()
           .append("path")
-              .attr("fill", function(d){if(d.properties.iso3166_2 == "ME") return "red"
-              return "blue" })
+              .attr("fill", function(d){return d.properties.area})
               .attr("d", path)
-              .attr("stroke", function(d){if(d.properties.iso3166_2 == "MD") return "yellow"
-              return "blue" })
       // Add the labels
       svg.append("g")
           .selectAll("labels")

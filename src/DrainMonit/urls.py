@@ -7,4 +7,5 @@ urlpatterns = [
     path('sensor/<int:pk>', views.sensor, name='sensor'),
     path('sensor_data', views.sensor_data, name='sensor_data'),
     path('predict', views.predict, name='predict'),
+    path('predict_back', views.predict_back, name='predict_back'),
 ]
