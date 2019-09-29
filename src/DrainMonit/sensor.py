@@ -1,26 +1,21 @@
 import requests as req
 import numpy as np
 import time
+from time import gmtime, strftime
 
-URL = "http://127.0.0.1:8000/"
+URL = "http://127.0.0.1:8000/sensor_data"
 
-k = 1
-date = 1
+id = 1
 while(1):
-    dateString = '%s-1-2019' % date
+
+    date = strftime("%Y-%m-%d %H:%M:%S", gmtime()).split(' ')[0]
     rate = 1000 + np.random.rand(1) * 600
-    DATA = {'UID':k, 'Flow_rate':rate,'Date':dateString}
+    DATA = {'UID':id, 'flow_rate':rate,'date':date}
     print(DATA)
-    k = k + 1
-    if k > 8:
-        k = 1
-        date = date + 1
-        if date > 30:
-            date = 1
+    r = req.post(url = URL, data =  DATA)
 
-    r = req.post(url = URL, data =  DATA)    
+    id = (id + 1) % 9
+    if id == 0 :
+        id = 1
+
     time.sleep(15.0)
-
-    
-
-
