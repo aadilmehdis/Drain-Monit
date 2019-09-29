@@ -51,7 +51,6 @@ def sensor_data(request):
         id = request.POST.get('UID')
         rate = request.POST.get('flow_rate')
         date = request.POST.get('date')
-        print(id, rate, date)
 
         id = Sensor.objects.get(pk=id)
         data = Readings.objects.create(sensor=id, date=date, rate=rate)
