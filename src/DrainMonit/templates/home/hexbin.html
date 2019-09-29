@@ -9,6 +9,9 @@
 <!-- Create an element where the map will take place -->
 <svg id="my_dataviz" width="880" height="600"></svg>
 <script>
+    setInterval(function() {
+        window.location.reload();
+    }, 3000)
     // The svg
     var svg = d3.select("svg"),
         width = +svg.attr("width"),
