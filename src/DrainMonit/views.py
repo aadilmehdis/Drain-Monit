@@ -55,9 +55,10 @@ def sensor_data(request):
         id = request.POST.get('UID')
         rate = request.POST.get('flow_rate')
         date = request.POST.get('date')
+        velocity = request.POST.get('velocity')
 
         id = Sensor.objects.get(pk=id)
-        data = Readings.objects.create(sensor=id, date=date, rate=rate)
+        data = Readings.objects.create(sensor=id, date=date, rate=rate, velocity=velocity)
         html = "<html><p> Received </p></html>"
 
         return HttpResponse(html)
@@ -84,7 +85,9 @@ def predict_back(request):
             [float(pipe.elevation), float(pipe.diameter)**2, float(pipe.angle), np.sqrt(np.random.uniform(low=0,high=180)), 1]
         )
         sensor_list = Sensor.objects.filter(pipe=pipe)
+
+        # expected_vel = float(pipe.diameter)**2
         for sensor in sensor_list:
-            update_val(sensor.id_name, prediction(X.T))
+            update_val(sensor.id_name, prediction(X.T), )
     print("Serviced")
     return HttpResponse("Yello")
