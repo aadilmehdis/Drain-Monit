@@ -1373,7 +1373,7 @@
         "bees": 42.9,
         "iso3166_2": "29",
         "type": "sensor",
-        "status": "normal",
+        "status": "clogged",
         "google_name": "Arizona (United States)"
       }
     },
