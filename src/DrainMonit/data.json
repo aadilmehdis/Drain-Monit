@@ -980,7 +980,7 @@
         "bees": 49.8,
         "iso3166_2": "20",
         "type": "sensor",
-        "status": "clogged",
+        "status": "normal",
         "google_name": "Ohio (United States)"
       }
     },
