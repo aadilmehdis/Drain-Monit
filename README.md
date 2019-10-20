@@ -1,6 +1,6 @@
 # Urban Drain Monitoring and Prediction
 
-### Megathon 2019
+### Megathon 2019 | IIIT Hyderabad
 
 ## Idea
 Monitor flow rate in urban storm water drainage pipes and predict the flow rate a few days ahead to provide adequate relief/management efforts for potentially critical locations.
